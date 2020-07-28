@@ -9,6 +9,17 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/12/bin
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/danielstafford/.oh-my-zsh"
+export PATH=${PATH}:/usr/local/mysql/bin/
+
+
+# colorize man page
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -84,7 +95,7 @@ export FZF_BASE=/usr/local/opt/fzf/install
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm node cloudapp extract zsh-autosuggestions fzf vi-mode)
+plugins=(git npm node extract zsh-autosuggestions fzf vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,7 +134,7 @@ alias gba="git branch -a"
 alias gcb="git checkout -b"
 alias gc="git checkout"
 alias gm="git merge"
-alias g="git add . && git commit"
+alias g="diff && git add . && git commit"
 alias and="&&"
 alias gac="git add . && git commit -m"
 alias gcm="git commit -m '"
@@ -168,9 +179,14 @@ alias r='cd -'
 alias mv='mv -i'
 alias p='git pull upstream develop'
 alias gpoh='git push origin head'
+alias gpuh='git push upstream head'
 alias up='git checkout develop && go upstream'
 alias kd='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+alias taa='terraform apply -auto-approve'
+alias diff="git difftool head -y"
+alias gl=" git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias yd='youtube-dl'
 
 # aincldue z§
 #. ~/z.sh
@@ -209,3 +225,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+export ANDROID_SDK=/Users/danielstafford/Library/Android/sdk
+export PATH=/Users/danielstafford/Library/Android/sdk/platform-tools:$PATH
