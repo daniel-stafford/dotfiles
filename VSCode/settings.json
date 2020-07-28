@@ -1,8 +1,9 @@
 {
+  "window.restoreFullscreen": true,
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 80,
   "editor.wordBasedSuggestions": false,
-  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreview": true,
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80
@@ -12,7 +13,7 @@
   "editor.lineNumbers": "on",
   "workbench.sideBar.location": "right",
   "workbench.panel.defaultLocation": "right",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 2,
   "editor.tabSize": 2,
   "workbench.activityBar.visible": false,
   "editor.fontSize": 16,
@@ -81,12 +82,14 @@
     ]
   },
   "cSpell.userWords": [
+    "COVID",
     "FREETEXT",
     "Integrify",
     "Interop",
     "MULTIPLECHOICE",
     "Parens",
     "Parms",
+    "SARHP",
     "SIGINT",
     "TRUEFALSE",
     "antialiased",
@@ -139,6 +142,7 @@
     "swipeable",
     "tachyons",
     "teemu",
+    "trello",
     "truthy",
     "typeorm",
     "unmount",
@@ -159,17 +163,20 @@
   "editor.renderWhitespace": "selection",
   "editor.accessibilitySupport": "on",
   "editor.cursorBlinking": "phase",
-  "editor.cursorWidth": 2,
+  "editor.cursorWidth": 3,
   "editor.snippetSuggestions": "top",
   "editor.tabCompletion": "on",
   "workbench.tips.enabled": false,
   "workbench.settings.editor": "json",
   "workbench.colorCustomizations": {
-    "editorCursor.foreground": "#ffff00",
-    "terminalCursor.foreground": "#ffff00"
+    "editorCursor.foreground": "#00FF41",
+    "terminalCursor.foreground": "#00FF41"
   },
   "breadcrumbs.enabled": true,
+  "terminal.integrated.fontSize": 14,
   "editor.renderControlCharacters": false,
+  "gitlens.blame.avatars": true,
+  "gitlens.blame.highlight.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.startupEditor": "newUntitledFile",
   "explorer.confirmDragAndDrop": false,
@@ -309,9 +316,7 @@
   "vim.cursorStylePerMode.replace": "line-thin",
   "vim.sneak": true,
   "vim.ignorecase": false,
-  "vim.enableNeovim": true,
   "editor.scrollBeyondLastLine": false,
-  "vscode-neovim.neovimPath": "/usr/local/bin/nvim",
   "explorer.confirmDelete": false,
   "shellcheck.enable": true,
   "shellcheck.enableQuickFix": true,
@@ -322,7 +327,6 @@
   "shellcheck.ignorePatterns": {},
   "shellcheck.ignoreFileSchemes": ["git", "gitfs"],
   "shellcheck.useWSL": false,
-  "vim.neovimPath": "/usr/local/bin/nvim",
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
@@ -339,12 +343,16 @@
     "exclude": [".terraform/**/*", "**/.terraform/**/*"]
   },
   "terraform.languageServer": {
-    "enabled": true,
-    "args": []
+    "external": true,
+    "args": ["serve"]
   },
   "java.semanticHighlighting.enabled": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "python.jediEnabled": false,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "react-native.packager.port": 19001,
+  "python.languageServer": "Microsoft",
+  "java.configuration.checkProjectSettingsExclusions": false,
+  "python.pythonPath": "/usr/local/bin/python3"
 }
