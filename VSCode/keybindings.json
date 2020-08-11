@@ -1,7 +1,7 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
   {
-    "key": "ctrl+[IntlBackslash]",
+    "key": "cmd+r",
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
@@ -125,74 +125,6 @@
   { "key": "cmd+7", "command": "workbench.action.openEditorAtIndex7" },
   { "key": "cmd+8", "command": "workbench.action.openEditorAtIndex8" },
   {
-    "key": "cmd+9",
-    "command": "workbench.action.openEditorAtIndex9"
-  },
-  {
-    "key": "alt+1",
-    "command": "workbench.action.focusFirstEditorGroup"
-  },
-  {
-    "key": "cmd+1",
-    "command": "-workbench.action.focusFirstEditorGroup"
-  },
-  {
-    "key": "alt+3",
-    "command": "workbench.action.focusThirdEditorGroup"
-  },
-  {
-    "key": "cmd+3",
-    "command": "-workbench.action.focusThirdEditorGroup"
-  },
-  {
-    "key": "alt+8",
-    "command": "workbench.action.focusEighthEditorGroup"
-  },
-  {
-    "key": "cmd+8",
-    "command": "-workbench.action.focusEighthEditorGroup"
-  },
-  {
-    "key": "alt+2",
-    "command": "workbench.action.focusSecondEditorGroup"
-  },
-  {
-    "key": "cmd+2",
-    "command": "-workbench.action.focusSecondEditorGroup"
-  },
-  {
-    "key": "alt+4",
-    "command": "workbench.action.focusFourthEditorGroup"
-  },
-  {
-    "key": "cmd+4",
-    "command": "-workbench.action.focusFourthEditorGroup"
-  },
-  {
-    "key": "alt+6",
-    "command": "workbench.action.focusSixthEditorGroup"
-  },
-  {
-    "key": "cmd+6",
-    "command": "-workbench.action.focusSixthEditorGroup"
-  },
-  {
-    "key": "alt+7",
-    "command": "workbench.action.focusSeventhEditorGroup"
-  },
-  {
-    "key": "cmd+7",
-    "command": "-workbench.action.focusSeventhEditorGroup"
-  },
-  {
-    "key": "alt+5",
-    "command": "workbench.action.focusFifthEditorGroup"
-  },
-  {
-    "key": "cmd+5",
-    "command": "-workbench.action.focusFifthEditorGroup"
-  },
-  {
     "command": "vscode-neovim.compositeEscape1",
     "key": "j",
     "when": "neovim.mode == insert",
@@ -203,5 +135,37 @@
     "key": "k",
     "when": "neovim.mode == insert",
     "args": "k"
+  },
+  {
+    "key": "ctrl+cmd+1",
+    "command": "workbench.action.focusNextGroup"
+  },
+  {
+    "key": "shift+alt+l",
+    "command": "workbench.action.focusPreviousGroup"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    "key": "shift+cmd+l shift+cmd+l",
+    "command": "turboConsoleLog.displayLogMessage"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "-turboConsoleLog.displayLogMessage"
   }
 ]
