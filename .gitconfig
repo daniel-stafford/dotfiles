@@ -1,0 +1,25 @@
+[core]
+editor = code --wait
+[user]
+	name = daniel-stafford
+	email = 33048490+daniel-stafford@users.noreply.github.com
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+# Comment: Start of "Extra Block"
+# Comment: This is to unlock Visual Studio Code as your Git diff and Git merge tool
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+# Comment: End of "Extra Block""
+[github]
+	user = daniel-stafford
+[ghi]
+	token = !security find-internet-password -a daniel-stafford -s github.com -l 'ghi token' -w
