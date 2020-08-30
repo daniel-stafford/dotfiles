@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>Shhhhh!</string>
+	<key>connections</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>373A0D92-637D-4130-A599-D6DFB1B43A27</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Andrew Skotzko</string>
+	<key>description</key>
+	<string>Closes all open system nofitications (iCal, etc)</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Shhhhh! (Dismiss System Notifications)</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  closeNotifications()
+end alfred_script
+
+
+my closeNotifications()
+on closeNotifications()
+
+    tell application "System Events"
+        tell process "Notification Center"
+            set theWindows to every window
+            repeat with i from 1 to number of items in theWindows
+                set this_item to item i of theWindows
+                try
+                    click button 1 of this_item
+                on error
+
+                    my closeNotifications()
+                end try
+            end repeat
+        end tell
+    end tell
+
+end closeNotifications
+
+
+
+on addAppletToAccessibilityList()
+  -- This function gets the user to enable Accessibility, for scripting the UI interface (hitting buttons etc.)
+  set thisAppletFile to (path to me)
+  tell application "Finder" to reveal thisAppletFile
+  tell application "System Preferences"
+    launch
+    activate
+
+    reveal anchor "Privacy_Assistive" of pane id "com.apple.preference.security"
+
+    activate
+
+    display alert ¬
+      "Add Applet to Accessibility" message "In order to respond to user clicks on Notification panels and alerts, this applet must be added to the lost of apps approved to use accessibility controls of the OS." &amp; return &amp; return &amp; ¬
+      "To add this app:" &amp; return &amp; return &amp; ¬
+      "1) Click the lock icon (if it is locked) and enter your password." &amp; return &amp; return &amp; ¬
+      "2) If 'SystemUIServer.app' is in the list, check the box next to it's name." &amp; return &amp; return &amp; ¬
+      "Otherwise, if the applet's name is in the list, check the box next to it's name. If it's not in the list, drag the applet (currently shown in the Finder) into the list area." &amp; return &amp; return &amp; ¬
+      "3) Click the lock to re-lock the preference pane, close System Preferences."
+  end tell
+end addAppletToAccessibilityList</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>shhh</string>
+				<key>subtext</key>
+				<string>Closes all Notifications (iCal, Notification Center, etc)</string>
+				<key>text</key>
+				<string>Close Notifications</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>373A0D92-637D-4130-A599-D6DFB1B43A27</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This runs an AppleScript to close all open system notifications from iCal, Notification Center, etc.
+
+Repackaged (with some tweaks) from: http://hints.macworld.com/article.php?story=20140129221522629</string>
+	<key>uidata</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>373A0D92-637D-4130-A599-D6DFB1B43A27</key>
+		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://andrewskotzko.com</string>
+</dict>
+</plist>
