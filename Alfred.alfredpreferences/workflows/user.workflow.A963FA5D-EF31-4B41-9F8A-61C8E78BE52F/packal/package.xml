@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>Memeflow</name>
-  <version>1.0</version>
-  <bundle>andrielfn.memeflow</bundle>
-  <updated>1415503250</updated>
-  <file>memeflow.alfredworkflow</file>
-</workflow>

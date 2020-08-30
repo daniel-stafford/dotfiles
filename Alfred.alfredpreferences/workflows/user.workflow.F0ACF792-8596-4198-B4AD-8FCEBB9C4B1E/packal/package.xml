@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>Fakeum</name>
-  <version>1.2</version>
-  <bundle>net.deanishe.alfred-fakeum</bundle>
-  <updated>1453994233</updated>
-  <file>fakeum-1.2.alfredworkflow</file>
-</workflow>
