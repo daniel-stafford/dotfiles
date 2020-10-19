@@ -1,15 +1,20 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$PATH:$NPM_PACKAGES/bin"
 export PATH="/Users/danielstafford/scripts/:$PATH"
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/12/bin
+export PATH=$PATH:/Applicatlions/Postgres.app/Contents/Versions/12/bin
+export PATH=/Users/danielstafford/.npm//bin:$PATH
+export JAVA_HOME=$(/usr/libexec/java_home -v  1.8.0_261)
+
 # Preserve MANPATH if you already defined it somewhere in your config.
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/danielstafford/.oh-my-zsh"
 export PATH=${PATH}:/usr/local/mysql/bin/
+# export PATH=$PATH:/Users/danielstafford/.npm/lib/node_modules/@aws-amplify/cli/bin/amplify:$PATH
+ export PATH=$PATH:"/Users/danielstafford/flutter/bin"
 
 
 # colorize man page
@@ -95,11 +100,11 @@ export FZF_BASE=/usr/local/opt/fzf/install
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm node extract zsh-autosuggestions fzf vi-mode)
+plugins=(git extract fzf vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/zsh-z.plugin.zsh
+# source ~/zsh-z.plugin.zsh
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
@@ -128,38 +133,34 @@ fi
 # Example aliases
 alias zsh="code ~/.zshrc"
 alias sz="source ~/.zshrc"
-alias ga="git add"
+alias ga="git add -A"
 alias gd="git diff"
 alias gba="git branch -a"
 alias gcb="git checkout -b"
-alias gc="git checkout"
+alias gc="git commit"
 alias gm="git merge"
 alias g="diff && git add . && git commit"
 alias and="&&"
-alias gac="git add . && git commit -m"
-alias gcm="git commit -m '"
+alias gac="git add -A && git commit -m"
 alias gp="git push"
 alias gpo="git push origin"
 alias gpod="git push origin develop"
 alias goph='git push origin head'
 alias gpom="git push origin master"
 alias gph="git push && git push heroku master"
-alias go='git-open'
-alias gou='git-open upstream'
-alias rm="trash"
+alias gho='git-open'
+alias ghou='git checkout develop && git-open upstream'
 alias nrd="npm run dev"
 alias nrw="npm run watch"
 alias ns="npm start"
 alias ni="npm i "
 alias sass="npm run sass:watch"
 alias upd="git add . && git commit -m 'save before npm update all' && git push && npm-update-all"
-alias ys="yarn start"
+alias ys="yarn && yarn start"
 alias ya="yarn add"
 alias yad="yarn add --dev"
 alias yr="yarn remove"
 alias y="yarn" #same as npm install
-alias integ="cd ~/Documents/Integrify"
-alias c="code"
 alias todo="ag --color-line-number '1;36' --color-path '1;36' --ignore-case --print-long-lines --silent '(?:<!-- *)?(?:#|//|/\*+|<!--|--) *(TODO|FIXME|FIX|BUG|UGLY|HACK|NOTE|IDEA|REVIEW|DEBUG|OPTIMIZE)(?:\([^(]+\))?:?(?!\w)(?: *-->| *\*/|(?= *(?:[^:]//|/\*+|<!--|@|--))|((?: +[^\n@]*?)(?= *(?:[^:]//|/\*+|<!--|@|--))|(?: +[^@\n]+)?))'"
 alias nw='npm run watch'
 alias nt='npm run watch-test'
@@ -187,9 +188,25 @@ alias diff="git difftool head -y"
 alias gl=" git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias yd='youtube-dl'
+alias t="rmtrash"
+alias grau="git remote add upstream"
+alias gil="gh issue list"
+alias gis="gh issue status"
+alias gpl="gh pr list"
+alias gps="gh pr status"
+alias status="gh pr status && gh issue status && gh pr list && gh issue list"
+alias gpc="gh pr checkout"
+alias es="npx expo start"
+alias ar="adb shell input text 'RR'"
+alias yard="cd /Users/danielstafford/Documents/Integrify/yard-app && open 'rndebugger://set-debugger-loc?host=localhost&port=19001' && code ."
+alias myy="cd /Users/danielstafford/Documents/Integrify/Myyntimaatio-App && open /Applications/Reactotron.app && open 'rndebugger://set-debugger-loc?host=localhost&port=19001' && code ."
+alias val="cd /Users/danielstafford/Documents/Integrify/valpas-app && open 'rndebugger://set-debugger-loc?host=localhost&port=19001' && code ."
+alias bug="open 'rndebugger://set-debugger-loc?host=localhost&port=19001'"
+alias pd="git pull origin develop"
+alias book="cd /Users/danielstafford/Documents/Coding/Tutorials/aws-amplify-fiddling/serverless-book && code ."
 
 # aincldue z§
-#. ~/z.sh
+. ~/z.sh
 
 function zle-keymap-select zle-line-init zle-line-finish {
   case $KEYMAP in
@@ -210,7 +227,6 @@ prompt_context() {
     # prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
-source /Users/danielstafford/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/usr/local/sbin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -219,7 +235,7 @@ export PATH="/usr/local/sbin:$PATH"
 # fix Hyper first line precent sign
 unsetopt PROMPT_SP
 
-source /Users/danielstafford/Library/Preferences/org.dystroy.broot/launcher/bash/br
+# source /Users/danielstafford/Library/Preferences/org.dystroy.broot/launcher/bash/br
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -227,3 +243,10 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 export ANDROID_SDK=/Users/danielstafford/Library/Android/sdk
 export PATH=/Users/danielstafford/Library/Android/sdk/platform-tools:$PATH
+
+export PATH=~/bin:$PATH
+
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH
