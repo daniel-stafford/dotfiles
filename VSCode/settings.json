@@ -1,24 +1,29 @@
 {
+  // turn on powermode 🚨
+  "powermode.enabled": true,
+  // tweaking settings to reduce amount of explosions
+  "powermode.maxExplosions": 1,
+  "powermode.explosionFrequency": 1,
+  // "prettier.requireConfig":true,
+  // "prettier.printWidth": 80,
+  //backgroundMode mask - animation matches the current syntax color
+  //backgroundMode image - displays animation with original colors from the image
+  "powermode.backgroundMode": "mask",
   "window.restoreFullscreen": true,
-  "editor.wordWrap": "on",
-  "editor.wordWrapColumn": 80,
+  "window.newWindowDimensions": "fullscreen",
   "editor.wordBasedSuggestions": false,
-  "workbench.editor.enablePreview": true,
-  "[markdown]": {
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80
-  },
+  "workbench.editor.enablePreview": false,
   "eslint.alwaysShowStatus": true,
   "blockhighlight.background": ["0", "0", "200", ".06"],
   "editor.lineNumbers": "on",
   "workbench.sideBar.location": "right",
   "workbench.panel.defaultLocation": "right",
-  "window.zoomLevel": 2,
+  "window.zoomLevel": 1,
   "editor.tabSize": 2,
   "workbench.activityBar.visible": false,
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
-  "editor.fontFamily": "'Victor Mono', 'Fira Code iScript', 'Fira Code', Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "'Dank Mono', 'OperatorMonoLig-Book','Victor Mono', 'Fira Code iScript', 'Fira Code', Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
   "editor.tokenColorCustomizations": {
@@ -78,29 +83,49 @@
         "settings": {
           "fontStyle": "italic"
         }
-      }
+      },
+      {
+        "name": "Symbol",
+        "scope": ["keyword", "storage", "keyword.control"],
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
     ]
   },
   "cSpell.userWords": [
+    "CONTENTFUL",
     "COVID",
+    "Entypo",
     "FREETEXT",
+    "Formik",
     "Integrify",
     "Interop",
+    "Ionicons",
+    "Katja",
+    "Loggedin",
     "MULTIPLECHOICE",
+    "Octicons",
     "Parens",
     "Parms",
+    "Reactotron",
     "SARHP",
     "SIGINT",
+    "Signup",
     "TRUEFALSE",
+    "Unorderedlist",
     "antialiased",
     "appbar",
     "appendonly",
+    "awsmobile",
     "bar",
     "beaverton",
     "bodyparse",
     "change",
+    "coinapi",
     "component",
     "devopsdockeruh",
+    "devtools",
     "dstafford",
     "elasticbeanstalk",
     "entrypoint",
@@ -119,6 +144,8 @@
     "minlength",
     "mixins",
     "mongod",
+    "myyntimaatio",
+    "nameid",
     "nestjs",
     "nestjsx",
     "number",
@@ -130,6 +157,7 @@
     "postgresql",
     "redmine",
     "reducers",
+    "reduxjs",
     "refetch",
     "rerendered",
     "rerenders",
@@ -148,6 +176,7 @@
     "unmount",
     "unsplash",
     "usertypes",
+    "uuidv",
     "varchar",
     "whoami",
     "will",
@@ -156,21 +185,21 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.iconTheme": "material-icon-theme",
+  // "workbench.iconTheme": "eq-material-theme-icons",
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "editor.copyWithSyntaxHighlighting": false,
   "editor.renderWhitespace": "selection",
   "editor.accessibilitySupport": "on",
-  "editor.cursorBlinking": "phase",
+  "editor.cursorBlinking": "solid",
   "editor.cursorWidth": 3,
   "editor.snippetSuggestions": "top",
   "editor.tabCompletion": "on",
   "workbench.tips.enabled": false,
   "workbench.settings.editor": "json",
   "workbench.colorCustomizations": {
-    "editorCursor.foreground": "#00FF41",
-    "terminalCursor.foreground": "#00FF41"
+    "editorCursor.foreground": "#ff8c08",
+    "terminalCursor.foreground": "#ff8c08"
   },
   "breadcrumbs.enabled": true,
   "terminal.integrated.fontSize": 14,
@@ -182,8 +211,44 @@
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "vim.camelCaseMotion.enable": true,
+  "vim.foldfix":true,
   "vim.leader": "<Space>",
+  "vim.insertModeKeyBindingsNonRecursive": [
+      {
+        "before": ["j", "k"],
+        "after": ["<ESC>"]
+      }
+    ],
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-h>"],
+      "after": ["<C-w>", "h"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<C-w>", "j"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<C-w>", "k"]
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<C-w>", "l"]
+    },
+    {
+
+      "before": ["<leader>", "m"],
+      "commands": [
+          "bookmarks.toggle"
+      ]
+  },
+  {
+      "before": ["<leader>", "b"],
+      "commands": [
+          "bookmarks.list"
+      ]
+  },
     {
       "before": ["u"],
       "after": [],
@@ -307,12 +372,13 @@
       "value": "#557c9b"
     }
   ],
+  "editor.renameOnType": true,
   "extensions.ignoreRecommendations": false,
   "vim.cursorStylePerMode.visual": "underline",
   "vim.cursorStylePerMode.visualline": "underline",
   "vim.cursorStylePerMode.visualblock": "underline",
   "vim.cursorStylePerMode.insert": "line",
-  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.normal": "block-outline",
   "vim.cursorStylePerMode.replace": "line-thin",
   "vim.sneak": true,
   "vim.ignorecase": false,
@@ -331,8 +397,7 @@
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
   "git.ignoreMissingGitWarning": true,
-  "workbench.colorTheme": "Dark++ Italic",
-  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -354,5 +419,37 @@
   "react-native.packager.port": 19001,
   "python.languageServer": "Microsoft",
   "java.configuration.checkProjectSettingsExclusions": false,
-  "python.pythonPath": "/usr/local/bin/python3"
+  "python.pythonPath": "/usr/local/bin/python3",
+  "sync.gist": "c2b88ae724434693c92c7a02cbc5e727",
+  "powermode.explosionSize": 5,
+  "powermode.explosionDuration": 300,
+  "powermode.shakeIntensity": 0,
+  "powermode.enableShake": false,
+  "vetur.experimental.templateInterpolationService": true,
+  "workbench.colorTheme": "Night Owl",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "dart.flutterSdkPath": "/Users/danielstafford/flutter",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "editor.wordWrap": "wordWrapColumn",
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "sonarlint.rules": {
+    "java:S106": {
+      "level": "off"
+    }
+  },
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.vim",
+  "kite.showWelcomeNotificationOnStartup": false,
+  "editor.suggest.showStatusBar":true
 }
