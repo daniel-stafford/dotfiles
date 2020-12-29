@@ -1,24 +1,13 @@
 {
-  // turn on powermode 🚨
-  "powermode.enabled": true,
-  // tweaking settings to reduce amount of explosions
-  "powermode.maxExplosions": 1,
-  "powermode.explosionFrequency": 1,
-  // "prettier.requireConfig":true,
-  // "prettier.printWidth": 80,
-  //backgroundMode mask - animation matches the current syntax color
-  //backgroundMode image - displays animation with original colors from the image
-  "powermode.backgroundMode": "mask",
   "window.restoreFullscreen": true,
   "window.newWindowDimensions": "fullscreen",
   "editor.wordBasedSuggestions": false,
   "workbench.editor.enablePreview": false,
   "eslint.alwaysShowStatus": true,
-  "blockhighlight.background": ["0", "0", "200", ".06"],
   "editor.lineNumbers": "on",
   "workbench.sideBar.location": "right",
   "workbench.panel.defaultLocation": "right",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "editor.tabSize": 2,
   "workbench.activityBar.visible": false,
   "editor.fontSize": 16,
@@ -185,7 +174,6 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // "workbench.iconTheme": "eq-material-theme-icons",
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "editor.copyWithSyntaxHighlighting": false,
@@ -372,7 +360,7 @@
       "value": "#557c9b"
     }
   ],
-  "editor.renameOnType": true,
+  "editor.linkedEditing":true,
   "extensions.ignoreRecommendations": false,
   "vim.cursorStylePerMode.visual": "underline",
   "vim.cursorStylePerMode.visualline": "underline",
@@ -384,51 +372,19 @@
   "vim.ignorecase": false,
   "editor.scrollBeyondLastLine": false,
   "explorer.confirmDelete": false,
-  "shellcheck.enable": true,
-  "shellcheck.enableQuickFix": true,
-  "shellcheck.run": "onType",
-  "shellcheck.executablePath": "shellcheck",
-  "shellcheck.exclude": [],
-  "shellcheck.customArgs": [],
-  "shellcheck.ignorePatterns": {},
-  "shellcheck.ignoreFileSchemes": ["git", "gitfs"],
-  "shellcheck.useWSL": false,
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
   "git.ignoreMissingGitWarning": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "terraform.indexing": {
-    "enabled": false,
-    "liveIndexing": false,
-    "delay": 500,
-    "exclude": [".terraform/**/*", "**/.terraform/**/*"]
-  },
-  "terraform.languageServer": {
-    "external": true,
-    "args": ["serve"]
-  },
-  "java.semanticHighlighting.enabled": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "python.jediEnabled": false,
   "git.autofetch": true,
-  "react-native.packager.port": 19001,
   "python.languageServer": "Microsoft",
-  "java.configuration.checkProjectSettingsExclusions": false,
   "python.pythonPath": "/usr/local/bin/python3",
-  "sync.gist": "c2b88ae724434693c92c7a02cbc5e727",
-  "powermode.explosionSize": 5,
-  "powermode.explosionDuration": 300,
-  "powermode.shakeIntensity": 0,
-  "powermode.enableShake": false,
   "vetur.experimental.templateInterpolationService": true,
   "workbench.colorTheme": "Night Owl",
   "editor.multiCursorModifier": "ctrlCmd",
-  "dart.flutterSdkPath": "/Users/danielstafford/flutter",
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
@@ -442,14 +398,5 @@
     "editor.wordBasedSuggestions": false
   },
   "editor.wordWrap": "wordWrapColumn",
-  "java.project.importOnFirstTimeStartup": "automatic",
-  "sonarlint.rules": {
-    "java:S106": {
-      "level": "off"
-    }
-  },
-  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.vim",
-  "kite.showWelcomeNotificationOnStartup": false,
   "editor.suggest.showStatusBar":true
 }
